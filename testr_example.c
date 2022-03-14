@@ -20,16 +20,18 @@ int arithmetic(char op, int n1, int n2) {
 	}
 }
 
-int tests() {
-	TESTR_BEGIN;
+TESTR() {
 	TEST(arithmetic('+', 1, 2) == 3);
 	TEST(arithmetic('-', 1, 2) == -1);
 	TEST(arithmetic('*', 2, 3) == 6);
 	TEST(arithmetic('/', 4, 2) == 2);
-	TESTR_END;
 }
 
 int main() {
-	on = 0;
-	return tests();
+	int run_tests = 1;
+	if (run_tests)
+		RUN_TESTS();
+	else
+		puts("Tests not run");
+	return 0;
 }
